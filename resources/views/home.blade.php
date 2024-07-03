@@ -35,26 +35,4 @@
 
         </div>
     </main>
-    @php
-        // $data = true;
-
-        $i = 3;
-    @endphp
-
-    @isset($data)
-        <div class="alert alert-success d-inline-block w-20">Success</div>
-    @endisset
-
-    @switch($i)
-        @case(1)
-            <div class="alert alert-danger">1</div>
-        @break
-
-        @case(2)
-            <div class="alert alert-success">2</div>
-        @break
-
-        @default
-            <div class="alert alert-warning">{{ $i }}</div>
-    @endswitch
 @endsection
