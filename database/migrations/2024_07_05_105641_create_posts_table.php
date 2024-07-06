@@ -17,6 +17,10 @@ return new class extends Migration
             $table->text('description');
             $table->boolean('status');
             $table->timestamps();
+            $table->date('publish_date');
+            $table->integer('user_id');
+            $table->integer('category_id');
+            $table->integer('views');
 
 
             //more datatype 
