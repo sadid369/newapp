@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Post extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+    // use SoftDeletes;
     
     protected $fillable = [
         'title',
@@ -29,4 +29,8 @@ class Post extends Model
     //     'category_id',
     //     'views'
     // ];
+
+   public function categories()  {
+        return $this->belongsTo(Categories::class,"category_id","id");
+    }
 }

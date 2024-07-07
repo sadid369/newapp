@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
+use App\Models\Categories;
 use App\Models\MyPost;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -98,8 +101,14 @@ class HomeController extends Controller
   // Post::withTrashed()->find(56)->restore();
   // Post::withTrashed()->find(56)->forceDelete();
 
-  $post = Post::all();
-    return $post;
-   
+  // $post = Post::all();
+  //   return $post;
+  //  $users= User::all();
+  // $addresses = Address::all();
+  //  return view('home',['addresses'=>$addresses]);
+
+  $cat = Categories::find(1)->posts;
+  return view('home',compact('cat'));
+  return $cat;
     }
 }

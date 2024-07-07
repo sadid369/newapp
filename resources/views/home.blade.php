@@ -1,38 +1,36 @@
 @extends('welcome')
 
 @section('content')
-    <main class="container" role="main">
-        <h1 class="mt-5 text-danger">Home</h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iure perferendis autem at facere odit beatae ex.
-        Libero doloribus inventore non, et ipsum eius reiciendis facere asperiores accusantium quo odit.
+    {{-- <main class="container" role="main">
         <div class="row mt-5">
-            @foreach ($blogs as $blog)
-                @if ($blog['status'] == 1)
-                    <div class="col-md-4">
-                        <div class="card mb-5">
-                            <div class="card-body">
-                                <h2>{{ $blog['title'] }}</h2>
-                                <p>
-                                    {{ $blog['body'] }}
-                                </p>
-                            </div>
+            @foreach ($users as $user)
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="fw-bold">{{ $user->name }}</h4>
+                            <p>{{ $user->email }}</p>
+                            <p>{{ $user->address->address }}</p>
                         </div>
                     </div>
-                @else
-                    <div class="col-md-4">
-                        <div class="card mb-5">
-                            <div class="card-body">
-                                <h2>{{ $blog['title'] }}</h2>
-                                <p>
-                                    {{ $blog['body'] }}
-                                </p>
-                                <div class="btn btn-warning">Pending</div>
-                            </div>
-                        </div>
-                    </div>
-                @endif
+                </div>
             @endforeach
-
+        </div>
+    </main> --}}
+    <main class="container" role="main">
+        <div class="row mt-5">
+            @foreach ($cat as $ct)
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="fw-bold">{{ $ct->title }}</h4>
+                            <p class="fw-bold">{{ $ct->description }}</p>
+                            <p class="btn btn-success">{{ $ct->categories->name }}</p>
+                            {{-- <p>{{ $address->user->email }}</p>
+                            <p>{{ $address->address }}</p> --}}
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </main>
 @endsection
